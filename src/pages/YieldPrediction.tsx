@@ -37,7 +37,7 @@ const YieldPrediction = () => {
     setLoading(true);
     try {
       // Connect to Python Flask ML Microservice
-      const mlBaseUrl = import.meta.env.VITE_ML_URL || 'https://capstone-backend-tzox.onrender.com';
+      const mlBaseUrl = import.meta.env.VITE_ML_URL || 'https://capstone-ai-model-2.onrender.com';
       const res = await axios.post(`${mlBaseUrl}/predict_yield`, {
         crop,
         temperature: parseFloat(temperature),

@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => ({
         secure: true,
       },
       '/ml-api': {
-        target: 'https://capstone-backend-tzox.onrender.com',
+        target: 'https://capstone-ai-model-2.onrender.com',
         changeOrigin: true,
         secure: true,
         rewrite: (path) => path.replace(/^\/ml-api/, ''),
