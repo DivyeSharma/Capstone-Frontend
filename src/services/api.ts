@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL || (import.meta.env.PROD ? 'https://capstone-backend-tzox.onrender.com/api' : '/api'),
-  timeout: 10000,
+  timeout: 60000, // Increased timeout to 60s for Render free tier cold starts
 });
 
 // Mock data for local development
