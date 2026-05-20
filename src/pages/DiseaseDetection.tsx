@@ -72,7 +72,7 @@ const DiseaseDetection = () => {
       formData.append('image', selectedFile);
 
       // Call Python Microservice
-      const mlBaseUrl = import.meta.env.VITE_ML_URL || '/ml-api';
+      const mlBaseUrl = import.meta.env.VITE_ML_URL || 'https://capstone-backend-tzox.onrender.com';
       const res = await axios.post(`${mlBaseUrl}/detect_disease`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });

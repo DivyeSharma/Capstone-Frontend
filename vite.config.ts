@@ -10,14 +10,14 @@ export default defineConfig(({ mode }) => ({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:8080',
+        target: 'https://capstone-backend-tzox.onrender.com',
         changeOrigin: true,
-        secure: false,
+        secure: true,
       },
       '/ml-api': {
-        target: 'http://localhost:5000',
+        target: 'https://capstone-backend-tzox.onrender.com',
         changeOrigin: true,
-        secure: false,
+        secure: true,
         rewrite: (path) => path.replace(/^\/ml-api/, ''),
       },
     },
