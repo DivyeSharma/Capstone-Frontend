@@ -24,10 +24,16 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    const savedUser = localStorage.getItem('user');
-    const savedToken = localStorage.getItem('token');
-    if (savedUser && savedToken) {
-      setUser(JSON.parse(savedUser));
+    try {
+      const savedUser = localStorage.getItem('user');
+      const savedToken = localStorage.getItem('token');
+      if (savedUser && savedToken) {
+        setUser(JSON.parse(savedUser));
+      }
+    } catch (error) {
+      console.error("Error parsing user session from localStorage:", error);
+      localStorage.removeItem('user');
+      localStorage.removeItem('token');
     }
     setLoading(false);
   }, []);
